@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-
+import localFont from "next/font/local";
 import "./globals.css";
+
+const trebuchet = localFont({
+  src: "../fonts/trebuc.ttf",
+  variable: "--font-trebuchet",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className={`${trebuchet.variable} antialiased`}>{children}</body>
     </html>
   );
 }
