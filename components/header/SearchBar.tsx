@@ -12,8 +12,26 @@ const SearchBar = () => {
   const searchRef = useRef<HTMLDivElement>(null);
   const [showSearch, setShowSearch] = useState(false);
   const mobileInputRef = useRef<HTMLIFrameElement>(null);
+
+  const toggleMobileSearch = () => {
+    setShowSearch(!showSearch);
+    if (!showSearch) {
+      // Reset search when opening
+      setSearch("");
+      // Show results immediately when opening search
+      setShowResults(true);
+    }
+  };
   return (
     <div className="relative lg:w-full">
+      {/* Mobile Search bar */}
+      <button onClick={toggleMobileSearch} className="lg:hidden mt-1.5">
+        {showSearch ? (
+          <X className="w-5 h-5 text-white hover:text-tech_orange hoverEffect" />
+        ) : (
+          <Search className="w-5 h-5 text-white hover:text-tech_orange hoverEffect" />
+        )}
+      </button>
       <form
         onSubmit={(e) => e.preventDefault()}
         className="relative hidden lg:flex items-center"

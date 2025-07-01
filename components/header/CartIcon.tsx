@@ -6,7 +6,7 @@ const CartIcon = () => {
   return (
     <Link
       href={"/cart"}
-      className="hidden lg:flex items-center gap-2.5 justify-end group"
+      className="flex items-center gap-2.5 justify-end group"
     >
       <span className="relative">
         <ShoppingBag className="text-tech_white lg:text-tech_orange w-5 h-6 lg:w-6 lg:h-6 group-hover:text-tech_orange lg:group-hover:text-tech_white hoverEffect" />
@@ -14,9 +14,9 @@ const CartIcon = () => {
           0
         </span>
       </span>
-      <div className="flex flex-col">
-        <h4 className="text-base font-bold text-tech_white">TV Deal</h4>
-        <p className="text-xs whitespace-nowrap">Special Deals</p>
+      <div className="hidden lg:flex flex-col">
+        <h4 className="text-base font-bold text-tech_white">Cart</h4>
+        <p className="text-xs whitespace-nowrap capitalize">New Cart</p>
       </div>
     </Link>
   );
